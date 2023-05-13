@@ -1,0 +1,34 @@
+<h1>identity</h1>
+<div class="button-panel">
+      Report Name: <input type="text"  [(ngModel)]="myReport.name">
+
+    <button color="primary" type="button"  (click)="add()" >Add</button>
+  </div>
+  
+  
+<div>
+<div class="preloader-wrapper active" 
+      *ngIf="isLoading$ | async as isLoading; else listCourses">
+      <app-loader></app-loader>
+    </div>
+	 <ng-template #listCourses>
+    <simple-ag-grid [colHeadersObsrv]="colHeadersObs" [rowDataObsrv]="rowDataObs"></simple-ag-grid>
+	</ng-template>
+	
+</div>
+  <!--
+<table class="table table-hover" *ngIf="myReports != 0">
+  <thead>
+  <tr>
+      <td>Product Name</td>
+      <td>Product Price</td>
+  </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let myReport of myReports | async">
+          <td>{{myReport.name}}</td>
+		   <td>{{myReport.email}}</td>
+          <td></td>
+      </tr>
+  </tbody>
+  </table>-->

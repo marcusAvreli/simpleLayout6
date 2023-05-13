@@ -1,0 +1,14 @@
+<div>
+<ag-grid-angular #agGrid style="height: 600px;" class="ag-theme-fresh"
+        [columnDefs] = "colmnObs | async"
+        [pagination]="true"
+		 rowSelection="multiple"
+        [enableColResize]="true"
+        [enableSorting]="true"
+        [paginationAutoPageSize]="true"
+        [overlayNoRowsTemplate]="overlayNoRowsTemplate"
+        (gridReady)="onGridReady($event)"
+        >
+</ag-grid-angular>
+<button (click)="onBtnExport()">Download</button>
+</div>
